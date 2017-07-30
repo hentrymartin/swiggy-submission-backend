@@ -1,0 +1,34 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "forever start --minUptime 1000 --spinSleepTime 1000 ./bin/www",
+    "stop": "forever stop ./bin/www"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cluster": "^0.7.7",
+    "cors": "^2.8.3",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.15.3",
+    "forever": "^0.15.3",
+    "google-auth-library": "^0.10.0",
+    "jsonwebtoken": "^7.4.1",
+    "mailgun-js": "^0.11.2",
+    "moment": "^2.18.1",
+    "mongoose": "^4.11.4",
+    "morgan": "^1.8.2",
+    "password-hash": "^1.2.2",
+    "socket.io": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

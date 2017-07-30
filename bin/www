@@ -1,0 +1,16 @@
+const http = require('http');
+const app = require('../app'); // The express app we just created
+
+const port = parseInt(process.env.PORT, 10) || 3001;
+app.set('port', port);
+
+const server = http.createServer(app);
+server.listen(port);
+const io = require('socket.io').listen(server);
+io.set('origins', '*:*');
+io.on('connection', (socket) => {
+  socket.on('post', function (params) {
+    console.log(params);
+    socket.broadcast.emit('post_added', params);
+  });
+});

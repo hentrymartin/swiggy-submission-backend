@@ -1,0 +1,5 @@
+{
+  "development": {
+    "url": "mongodb://hentrymartin:hentry@ds127173.mlab.com:27173/swiggy-submission"
+  }
+}
