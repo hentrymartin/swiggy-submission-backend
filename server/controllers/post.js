@@ -39,7 +39,7 @@ module.exports = {
   getAllPost(req, res) {
     return postModel.find({
       'author.id': req.decoded.id,
-    }, (err, posts) => {
+    }).sort({ timestamp: -1 }).exec((err, posts) => {
       if (err) {
         res.status(400).send({
           error_code: 'post_fetching_failed',
@@ -98,6 +98,6 @@ module.exports = {
         });
         res.status(200).send(structuredPost);
       });
-    })
+    });
   }
 };
